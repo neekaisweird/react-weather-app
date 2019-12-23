@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DailyForecast({ day, high, low }) {
+function DailyForecastCard({ day, high, low }) {
   return (
     <div>
       <h2>{day}</h2>
@@ -10,4 +10,4 @@ function DailyForecast({ day, high, low }) {
   );
 }
 
-export default DailyForecast;
+export default DailyForecastCard;

@@ -1,5 +1,5 @@
 import React from 'react';
-import ForecastList from './ForecastList';
+import DailyForecastList from './DailyForecastList';
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <h1>
         Forecast for <span>Seattle</span>
       </h1>
-      <ForecastList />
+      <DailyForecastList />
     </div>
   );
 }

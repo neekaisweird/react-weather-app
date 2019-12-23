@@ -1,15 +1,15 @@
 import React from 'react';
-import DailyForecast from './DailyForecast';
+import DailyForecastCard from './DailyForecastCard';
 import { FAKE_FORECAST } from '../constants';
 
-function ForecastList() {
+function DailyForecastList() {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       {FAKE_FORECAST.map(f => {
-        return <DailyForecast day={f.day} high={f.high} low={f.low} />;
+        return <DailyForecastCard day={f.day} high={f.high} low={f.low} />;
       })}
     </div>
   );
 }
 
-export default ForecastList;
+export default DailyForecastList;
