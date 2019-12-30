@@ -1,5 +1,6 @@
 import React from 'react';
 import DailyForecastList from './DailyForecastList';
+import ForecastContainer from './ForecastContainer';
 
 function App() {
   return (
@@ -7,7 +8,8 @@ function App() {
       <h1>
         Forecast for <span>Seattle</span>
       </h1>
-      <DailyForecastList />
+      <ForecastContainer />
+      {/* <DailyForecastList /> */}
     </div>
   );
 }
