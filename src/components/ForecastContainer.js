@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import CurrentForecastCard from './CurrentForecastCard';
 const URL =
   'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/fecaf02b90b8464d188ad74aae2bcb9e/47.6062,-122.3321';
 
@@ -57,16 +58,11 @@ function ForecastContainer() {
   }, []);
   return (
     <div>
-      <h1>Forecast Container</h1>
       {isLoading ? (
         <h4>Loading weather data for you! </h4>
       ) : (
         <div>
-          {' '}
-          <div>
-            It's currently {Math.round(currentForecast.temp)}°F and{' '}
-            {currentForecast.summary}.
-          </div>
+          <CurrentForecastCard currentForecast={currentForecast} />
           <div>
             {dailyForecast.map(d => (
               <ul>
