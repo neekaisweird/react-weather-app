@@ -6,6 +6,7 @@ const URL =
 function ForecastContainer() {
   const [currentForecast, setCurrentForecast] = useState({});
   const [dailyForecast, setDailyForecast] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   async function getWeatherData() {
     try {
@@ -45,6 +46,7 @@ function ForecastContainer() {
           icon: daily[4].icon
         }
       ]);
+      setIsLoading(false);
     } catch (err) {
       console.log(err);
     }
@@ -56,18 +58,26 @@ function ForecastContainer() {
   return (
     <div>
       <h1>Forecast Container</h1>
-      <p>
-        It's currently {currentForecast.temp}°F and {currentForecast.summary}.
-      </p>
-      <p>
-        {dailyForecast.map(d => (
-          <ul>
-            <li>Low: {d.low}</li>
-            <li>High: {d.high}</li>
-            <li>Icon: {d.icon}</li>
-          </ul>
-        ))}
-      </p>
+      {isLoading ? (
+        <h4>Loading weather data for you! </h4>
+      ) : (
+        <div>
+          {' '}
+          <div>
+            It's currently {Math.round(currentForecast.temp)}°F and{' '}
+            {currentForecast.summary}.
+          </div>
+          <div>
+            {dailyForecast.map(d => (
+              <ul>
+                <li>Low: {d.low}</li>
+                <li>High: {d.high}</li>
+                <li>Icon: {d.icon}</li>
+              </ul>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
