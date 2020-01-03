@@ -1,13 +1,12 @@
 import React from 'react';
 import DailyForecastCard from './DailyForecastCard';
-import { FAKE_FORECAST } from '../constants';
 
-function DailyForecastList() {
+function DailyForecastList({ dailyForecast }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
-      {FAKE_FORECAST.map(f => {
-        return <DailyForecastCard day={f.day} high={f.high} low={f.low} />;
-      })}
+      {dailyForecast.map(d => (
+        <DailyForecastCard dailyForecast={d} />
+      ))}
     </div>
   );
 }

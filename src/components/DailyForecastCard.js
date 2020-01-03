@@ -1,11 +1,12 @@
 import React from 'react';
+import CurrentForecastIcon from './CurrentForecastIcon';
+import DailyForecastTemps from './DailyForecastTemps';
 
-function DailyForecastCard({ day, high, low }) {
+function DailyForecastCard({ dailyForecast }) {
   return (
     <div>
-      <h2>{day}</h2>
-      <p>High: {high}</p>
-      <p>Low: {low}</p>
+      <CurrentForecastIcon icon={dailyForecast.icon} />
+      <DailyForecastTemps high={dailyForecast.high} low={dailyForecast.low} />
     </div>
   );
 }
