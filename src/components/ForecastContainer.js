@@ -9,6 +9,7 @@ const URL =
 function ForecastContainer() {
   const [currentForecast, setCurrentForecast] = useState({});
   const [dailyForecast, setDailyForecast] = useState([]);
+  const [currentDay, setCurrentDay] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   async function getWeatherData() {
@@ -49,6 +50,7 @@ function ForecastContainer() {
           icon: daily[4].icon
         }
       ]);
+      setCurrentDay({ timestamp: daily[0].time, timezone: data.timezone });
       setIsLoading(false);
     } catch (err) {
       console.log(err);
@@ -65,7 +67,10 @@ function ForecastContainer() {
       ) : (
         <div>
           <CurrentForecastCard currentForecast={currentForecast} />
-          <DailyForecastList dailyForecast={dailyForecast} />
+          <DailyForecastList
+            dailyForecast={dailyForecast}
+            currentDay={currentDay}
+          />
         </div>
       )}
     </div>
