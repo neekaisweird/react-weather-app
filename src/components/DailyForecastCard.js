@@ -3,10 +3,13 @@ import CurrentForecastIcon from './CurrentForecastIcon';
 import DailyForecastTemps from './DailyForecastTemps';
 import DailyForecastDayOfTheWeek from './DailyForecastDayOfTheWeek';
 
-function DailyForecastCard({ dailyForecast, currentDay }) {
+function DailyForecastCard({ dailyForecast, timezone }) {
   return (
     <div>
-      <DailyForecastDayOfTheWeek currentDay={currentDay} />
+      <DailyForecastDayOfTheWeek
+        timezone={timezone}
+        timestamp={dailyForecast.timestamp}
+      />
       <CurrentForecastIcon icon={dailyForecast.icon} />
       <DailyForecastTemps high={dailyForecast.high} low={dailyForecast.low} />
     </div>
