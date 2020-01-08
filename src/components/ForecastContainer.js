@@ -5,10 +5,12 @@ import DailyForecastList from './DailyForecastList';
 import CityHeader from './CityHeader';
 
 const NUM_DAILY_FORECAST = 5;
-const URL = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.DARK_SKY_API}/47.6062,-122.3321`;
 
 function ForecastContainer() {
-  const [city, setCity] = useState('Seattle');
+  const [location, setLocation] = useState({
+    city: 'Seattle',
+    coords: [-122.3321, 47.6062]
+  });
   const [currentForecast, setCurrentForecast] = useState({});
   const [dailyForecast, setDailyForecast] = useState([]);
   const [timezone, setTimezone] = useState(null);
@@ -16,6 +18,7 @@ function ForecastContainer() {
 
   async function getWeatherData() {
     try {
+      const URL = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.DARK_SKY_API}/${location.coords[1]},${location.coords[0]}`;
       const res = await axios.get(URL);
       const { data } = res;
       const { currently } = data;
@@ -44,10 +47,10 @@ function ForecastContainer() {
 
   useEffect(() => {
     getWeatherData();
-  }, []);
+  }, [location]);
 
-  function updateCity(newCity) {
-    setCity(newCity);
+  function updateLocation(city) {
+    setLocation(city);
   }
   return (
     <div>
@@ -55,7 +58,7 @@ function ForecastContainer() {
         <h4>Loading weather data for you! </h4>
       ) : (
         <div>
-          <CityHeader city={city} updateCity={updateCity} />
+          <CityHeader city={location.city} updateLocation={updateLocation} />
           <CurrentForecastCard currentForecast={currentForecast} />
           <DailyForecastList
             dailyForecast={dailyForecast}
