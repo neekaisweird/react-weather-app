@@ -5,8 +5,7 @@ import DailyForecastList from './DailyForecastList';
 import CityHeader from './CityHeader';
 
 const NUM_DAILY_FORECAST = 5;
-const URL =
-  'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/fecaf02b90b8464d188ad74aae2bcb9e/47.6062,-122.3321';
+const URL = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.DARK_SKY_API}/47.6062,-122.3321`;
 
 function ForecastContainer() {
   const [city, setCity] = useState('Seattle');
