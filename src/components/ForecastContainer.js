@@ -49,8 +49,9 @@ function ForecastContainer() {
     getWeatherData();
   }, [location]);
 
-  function updateLocation(city) {
-    setLocation(city);
+  function updateLocation(newCity) {
+    setIsLoading(true);
+    setLocation(newCity);
   }
   return (
     <div>

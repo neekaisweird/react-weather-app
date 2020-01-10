@@ -1,13 +1,13 @@
 import React from 'react';
 import CurrentForecastSummary from './CurrentForecastSummary';
-import CurrentForecastIcon from './CurrentForecastIcon';
+import ForecastIcon from './ForecastIcon';
 import CurrentForecastTemp from './CurrentForecastTemp';
 
 function CurrentForecastCard({ currentForecast }) {
   return (
     <div>
       <h3>Currently: </h3>
-      <CurrentForecastIcon icon={currentForecast.icon} />
+      <ForecastIcon icon={currentForecast.icon} />
       <CurrentForecastSummary summary={currentForecast.summary} />
       <CurrentForecastTemp temp={currentForecast.temp} />
     </div>

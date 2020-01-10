@@ -4,7 +4,6 @@ import '../../node_modules/@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.cs
 
 function CitySearchForm({ updateLocation }) {
   function citySubmission({ result }) {
-    console.log(result);
     updateLocation({
       city: result.text,
       coords: result.center.reverse() // reverse to match [lat, long]
