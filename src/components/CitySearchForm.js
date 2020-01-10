@@ -4,12 +4,14 @@ import '../../node_modules/@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.cs
 
 function CitySearchForm({ updateLocation }) {
   function citySubmission({ result }) {
+    console.log(result);
     updateLocation({
       city: result.text,
-      coords: result.center
+      coords: result.center.reverse() // reverse to match [lat, long]
     });
     geocoder.clear();
   }
+
   // mapbox autocomplete search feature
   mapboxgl.accessToken = process.env.MAPBOX_API;
   var geocoder = new MapboxGeocoder({
@@ -17,6 +19,7 @@ function CitySearchForm({ updateLocation }) {
     types: 'place',
     placeholder: 'Enter a new city'
   });
+
   useEffect(() => {
     geocoder.addTo('#geocoder-container');
     geocoder.on('result', citySubmission);

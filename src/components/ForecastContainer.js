@@ -9,7 +9,7 @@ const NUM_DAILY_FORECAST = 5;
 function ForecastContainer() {
   const [location, setLocation] = useState({
     city: 'Seattle',
-    coords: [-122.3321, 47.6062]
+    coords: [47.6062, -122.3321]
   });
   const [currentForecast, setCurrentForecast] = useState({});
   const [dailyForecast, setDailyForecast] = useState([]);
@@ -18,7 +18,7 @@ function ForecastContainer() {
 
   async function getWeatherData() {
     try {
-      const URL = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.DARK_SKY_API}/${location.coords[1]},${location.coords[0]}`;
+      const URL = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.DARK_SKY_API}/${location.coords[0]},${location.coords[1]}`;
       const res = await axios.get(URL);
       const { data } = res;
       const { currently } = data;
