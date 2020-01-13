@@ -1,0 +1,8 @@
+.ForecastContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 0 auto;
+  width: 65%;
+  max-width: 1000px;
+}

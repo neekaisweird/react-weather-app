@@ -2,11 +2,7 @@ import React from 'react';
 import ForecastContainer from './ForecastContainer';
 
 function App() {
-  return (
-    <div>
-      <ForecastContainer />
-    </div>
-  );
+  return <ForecastContainer />;
 }
 
 export default App;
