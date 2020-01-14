@@ -1,0 +1,7 @@
+.CurrentForecastSummary {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  display: inline;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}

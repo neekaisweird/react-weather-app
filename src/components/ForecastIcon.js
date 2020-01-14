@@ -2,9 +2,11 @@ import React from 'react';
 
 function ForecastIcon({ icon }) {
   return (
-    <span>
-      <img alt={icon} src={`src/assets/images/${icon}.svg`} />
-    </span>
+    <img
+      style={{ verticalAlign: 'middle' }}
+      alt={icon}
+      src={`src/assets/images/${icon}.svg`}
+    />
   );
 }
 

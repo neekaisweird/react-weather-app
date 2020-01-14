@@ -7,7 +7,6 @@ import './CurrentForecastCard.css';
 function CurrentForecastCard({ currentForecast }) {
   return (
     <div className="CurrentForecastCard">
-      <h3>Currently: </h3>
       <ForecastIcon icon={currentForecast.icon} />
       <CurrentForecastSummary summary={currentForecast.summary} />
       <CurrentForecastTemp temp={currentForecast.temp} />

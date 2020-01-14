@@ -1,7 +1,8 @@
 import React from 'react';
+import './CurrentForecastSummary.css';
 
 function CurrentForecastSummary({ summary }) {
-  return <span>{summary}</span>;
+  return <div className="CurrentForecastSummary">{summary}</div>;
 }
 
 export default CurrentForecastSummary;
