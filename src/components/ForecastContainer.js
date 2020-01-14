@@ -60,8 +60,8 @@ function ForecastContainer() {
         <h4>Loading weather data for you! </h4>
       ) : (
         <>
-          <CurrentForecastCard currentForecast={currentForecast} />
           <CityHeader city={location.city} updateLocation={updateLocation} />
+          <CurrentForecastCard currentForecast={currentForecast} />
           <DailyForecastList
             dailyForecast={dailyForecast}
             timezone={timezone}

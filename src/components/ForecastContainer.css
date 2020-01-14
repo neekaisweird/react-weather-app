@@ -1,6 +1,7 @@
 .ForecastContainer {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin: 0 auto;
   width: 65%;

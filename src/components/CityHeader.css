@@ -1,16 +1,16 @@
 .CityHeader {
-  width: 50%;
+  width: 80%;
   text-align: center;
 }
 
 .CityHeader h1 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  font-size: 3rem;
-  margin-top: 0;
+  font-size: 2.5rem;
+  margin: 1rem 0;
 }
 
 /* div is mapbox's input */
 .CityHeader div {
-  margin: 0 auto;
+  margin: 1rem auto;
 }
