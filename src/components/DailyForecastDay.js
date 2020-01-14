@@ -1,8 +1,8 @@
 import React from 'react';
 import getDay from '../helpers/timestampConverter';
 
-function DailyForecastDayOfTheWeek({ timestamp, timezone }) {
+function DailyForecastDay({ timestamp, timezone }) {
   return <div>{getDay(timestamp, timezone)}</div>;
 }
 
-export default DailyForecastDayOfTheWeek;
+export default DailyForecastDay;

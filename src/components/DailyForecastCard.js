@@ -1,12 +1,13 @@
 import React from 'react';
 import ForecastIcon from './ForecastIcon';
 import DailyForecastTemps from './DailyForecastTemps';
-import DailyForecastDayOfTheWeek from './DailyForecastDayOfTheWeek';
+import DailyForecastDay from './DailyForecastDay';
+import './DailyForecastCard.css';
 
 function DailyForecastCard({ dailyForecast, timezone }) {
   return (
-    <div>
-      <DailyForecastDayOfTheWeek
+    <div className="DailyForecastCard">
+      <DailyForecastDay
         timezone={timezone}
         timestamp={dailyForecast.timestamp}
       />
