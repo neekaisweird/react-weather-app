@@ -1,0 +1,16 @@
+html {
+  margin: 0;
+  height: 100vh;
+  background: rgb(55, 163, 221);
+  background: linear-gradient(
+    0deg,
+    rgba(55, 163, 221, 1) 0%,
+    rgba(196, 219, 231, 1) 100%
+  );
+  /* background: rgb(238, 167, 50);
+  background: linear-gradient(
+    0deg,
+    rgba(238, 167, 50, 1) 0%,
+    rgba(245, 229, 120, 1) 100%
+  ); */
+}
