@@ -1,6 +1,7 @@
 import React from 'react';
 import ForecastIcon from './ForecastIcon';
-import DailyForecastTemps from './DailyForecastTemps';
+import DailyForecastHigh from './DailyForecastHigh';
+import DailyForecastLow from './DailyForecastLow';
 import DailyForecastDay from './DailyForecastDay';
 import './DailyForecastCard.css';
 
@@ -12,7 +13,10 @@ function DailyForecastCard({ dailyForecast, timezone }) {
         timestamp={dailyForecast.timestamp}
       />
       <ForecastIcon icon={dailyForecast.icon} />
-      <DailyForecastTemps high={dailyForecast.high} low={dailyForecast.low} />
+      <div>
+        <DailyForecastHigh high={dailyForecast.high} />
+        <DailyForecastLow low={dailyForecast.low} />
+      </div>
     </div>
   );
 }
