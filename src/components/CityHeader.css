@@ -1,6 +1,5 @@
 .CityHeader {
   width: 80%;
-  text-align: center;
 }
 
 .CityHeader h1 {
@@ -8,9 +7,10 @@
   font-weight: 400;
   font-size: 2rem;
   margin: 1rem 0;
+  text-align: center;
 }
 
 /* div is mapbox's input */
 .CityHeader div {
-  margin: 1rem auto;
+  margin: 0 auto;
 }
