@@ -13,7 +13,7 @@ function DailyForecastCard({ dailyForecast, timezone }) {
         timestamp={dailyForecast.timestamp}
       />
       <ForecastIcon icon={dailyForecast.icon} />
-      <div>
+      <div className="temps">
         <DailyForecastHigh high={dailyForecast.high} />
         <DailyForecastLow low={dailyForecast.low} />
       </div>
