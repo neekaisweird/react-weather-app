@@ -1,10 +1,11 @@
 import React from 'react';
+import './DailyForecastTemps.css';
 
 function DailyForecastTemps({ high, low }) {
   return (
-    <div>
-      <p>High: {Math.round(high)}°F</p>
-      <p>Low: {Math.round(low)}°F</p>
+    <div className="DailyForecastTemps">
+      <span style={{ fontSize: '1.4rem' }}>{Math.round(high)} / </span>
+      <span>{Math.round(low)}°F</span>
     </div>
   );
 }
