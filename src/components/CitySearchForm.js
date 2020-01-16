@@ -6,7 +6,7 @@ function CitySearchForm({ updateLocation }) {
   function citySubmission({ result }) {
     updateLocation({
       city: result.text,
-      coords: result.center.reverse() // reverse to match [lat, long]
+      coords: result.center.slice().reverse() // reverse to match [lat, long]
     });
     geocoder.clear();
   }
