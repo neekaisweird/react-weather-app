@@ -1,4 +1,4 @@
-html {
+body {
   margin: 0;
   height: 100vh;
   background: rgb(55, 163, 221);
@@ -13,4 +13,5 @@ html {
     rgba(238, 167, 50, 1) 0%,
     rgba(245, 229, 120, 1) 100%
   ); */
+  overflow: hidden;
 }
