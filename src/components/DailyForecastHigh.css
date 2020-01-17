@@ -4,3 +4,15 @@
   font-size: 1.7rem;
   display: inline;
 }
+
+@media (max-width: 850px) {
+  .DailyForecastHigh {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .DailyForecastHigh {
+    font-size: 1rem;
+  }
+}

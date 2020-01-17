@@ -6,3 +6,9 @@
   vertical-align: middle;
   padding-right: 30px; /* to account for padding inside the icon image */
 }
+
+@media (max-width: 500px) {
+  .CurrentForecastSummary {
+    font-size: 1.2rem;
+  }
+}

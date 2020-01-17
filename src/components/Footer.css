@@ -21,8 +21,6 @@
 }
 
 .Footer a:hover {
-  /* color: rgba(0, 0, 0, 0.7); */
-  /* transform: translateY(-5px); */
   color: #000000;
 }
 
@@ -33,4 +31,23 @@
 
 .Footer a:last-child {
   padding-left: 10px;
+}
+
+@media (max-width: 850px) {
+  .Footer a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .Footer {
+    flex-direction: column;
+  }
+  .Footer a:first-child {
+    border-right: none;
+    padding: 0;
+  }
+  .Footer a:last-child {
+    padding: 0;
+  }
 }

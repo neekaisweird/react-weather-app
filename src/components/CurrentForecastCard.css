@@ -3,3 +3,9 @@
   text-align: center;
   margin: 1rem 0;
 }
+
+@media (max-width: 500px) {
+  .CurrentForecastCard {
+    width: 100%;
+  }
+}

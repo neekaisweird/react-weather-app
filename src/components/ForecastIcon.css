@@ -1,0 +1,9 @@
+.ForecastIcon {
+  vertical-align: middle;
+}
+
+@media (max-width: 640px) {
+  .ForecastIcon {
+    width: 80px;
+  }
+}

@@ -5,3 +5,15 @@
   color: rgba(0, 0, 0, 0.7);
   display: inline;
 }
+
+@media (max-width: 850px) {
+  .DailyForecastLow {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .DailyForecastLow {
+    font-size: 1rem;
+  }
+}

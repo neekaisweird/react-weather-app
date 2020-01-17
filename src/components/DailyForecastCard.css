@@ -5,3 +5,9 @@
 .DailyForecastCard .temps {
   margin-top: 0.5rem;
 }
+
+@media (max-width: 850px) {
+  .DailyForecastCard {
+    margin-top: 1rem;
+  }
+}

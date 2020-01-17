@@ -1,9 +1,10 @@
 import React from 'react';
+import './ForecastIcon.css';
 
 function ForecastIcon({ icon }) {
   return (
     <img
-      style={{ verticalAlign: 'middle' }}
+      className="ForecastIcon"
       alt={icon}
       src={`src/assets/images/${icon}.svg`}
     />

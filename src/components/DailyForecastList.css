@@ -1,7 +1,14 @@
 .DailyForecastList {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-between;
   width: 100%;
   margin: 2rem 0;
+}
+
+@media (max-width: 850px) {
+  .DailyForecastList {
+    width: 90%;
+    margin: 0;
+  }
 }
