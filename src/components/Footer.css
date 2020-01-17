@@ -1,0 +1,36 @@
+.Footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+  position: fixed;
+  bottom: 0;
+}
+
+.Footer a {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 3px;
+  transition: 0.5s all;
+  cursor: pointer;
+}
+
+.Footer a:hover {
+  /* color: rgba(0, 0, 0, 0.7); */
+  /* transform: translateY(-5px); */
+  color: #000000;
+}
+
+.Footer a:first-child {
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+  padding-right: 10px;
+}
+
+.Footer a:last-child {
+  padding-left: 10px;
+}
