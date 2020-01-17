@@ -1,10 +1,9 @@
 .CurrentForecastCard {
   width: 50%;
   text-align: center;
-  margin: 1rem 0;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 850px) {
   .CurrentForecastCard {
     width: 100%;
   }

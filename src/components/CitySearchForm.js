@@ -25,7 +25,7 @@ function CitySearchForm({ updateLocation }) {
   }, []);
 
   return (
-    <div>
+    <div style={{ padding: '2rem 0' }}>
       <form id="geocoder-container"></form>
     </div>
   );

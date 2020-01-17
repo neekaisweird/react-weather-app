@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CurrentForecastCard from './CurrentForecastCard';
 import DailyForecastList from './DailyForecastList';
+import CitySearchForm from './CitySearchForm';
 import CityHeader from './CityHeader';
 import Loader from './Loader';
 import './ForecastContainer.css';
@@ -57,7 +58,9 @@ function ForecastContainer() {
   }
   return (
     <div className="ForecastContainer">
-      <CityHeader city={location.city} updateLocation={updateLocation} />
+      <CitySearchForm updateLocation={updateLocation} />
+      <hr />
+      <CityHeader city={location.city} />
       {isLoading ? (
         <Loader />
       ) : (
