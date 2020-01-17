@@ -1,0 +1,11 @@
+.Loader {
+  animation: rotate 2.5s linear infinite;
+  width: 200px;
+  margin-top: 2rem;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -3,6 +3,7 @@ import axios from 'axios';
 import CurrentForecastCard from './CurrentForecastCard';
 import DailyForecastList from './DailyForecastList';
 import CityHeader from './CityHeader';
+import Loader from './Loader';
 import './ForecastContainer.css';
 
 const NUM_DAILY_FORECAST = 5;
@@ -56,11 +57,11 @@ function ForecastContainer() {
   }
   return (
     <div className="ForecastContainer">
+      <CityHeader city={location.city} updateLocation={updateLocation} />
       {isLoading ? (
-        <h4>Loading weather data for you! </h4>
+        <Loader />
       ) : (
         <>
-          <CityHeader city={location.city} updateLocation={updateLocation} />
           <CurrentForecastCard currentForecast={currentForecast} />
           <DailyForecastList
             dailyForecast={dailyForecast}
