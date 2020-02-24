@@ -10,10 +10,11 @@ import './ForecastContainer.css';
 const NUM_DAILY_FORECAST = 5;
 
 function ForecastContainer() {
-  const [location, setLocation] = useState({
-    city: 'Austin',
-    coords: [30.2672, -97.7431]
-  });
+  const [location, setLocation] = useState();
+  // {
+  //   city: 'Austin',
+  //   coords: [30.2672, -97.7431]
+  // }
   const [currentForecast, setCurrentForecast] = useState({});
   const [dailyForecast, setDailyForecast] = useState([]);
   const [timezone, setTimezone] = useState(null);
@@ -71,7 +72,6 @@ function ForecastContainer() {
     if (!navigator.geolocation) {
       // add not supported error message
     } else {
-      // add loader
       navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
     }
   }
@@ -90,11 +90,11 @@ function ForecastContainer() {
     <div className="ForecastContainer">
       <CitySearchForm updateLocation={updateLocation} />
       <hr />
-      <CityHeader city={location.city} />
       {isLoading ? (
         <Loader />
       ) : (
         <>
+          <CityHeader city={location.city} />
           <CurrentForecastCard currentForecast={currentForecast} />
           <DailyForecastList
             dailyForecast={dailyForecast}
