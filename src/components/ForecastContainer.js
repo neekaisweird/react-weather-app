@@ -11,8 +11,8 @@ const NUM_DAILY_FORECAST = 5;
 
 function ForecastContainer() {
   const [location, setLocation] = useState({
-    city: 'Seattle',
-    coords: [47.6062, -122.3321]
+    city: 'Austin',
+    coords: [30.2672, -97.7431]
   });
   const [currentForecast, setCurrentForecast] = useState({});
   const [dailyForecast, setDailyForecast] = useState([]);
@@ -48,6 +48,36 @@ function ForecastContainer() {
     }
   }
 
+  function getGeolocation() {
+    function geoSuccess(position) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+
+      async function getCityFromCoords(lat, long) {
+        try {
+          const URL = `https://api.mapbox.com/geocoding/v5/mapbox.places/${long},${lat}.json?types=place&access_token=${process.env.MAPBOX_API}`;
+          const res = await axios.get(URL);
+          const { data } = res;
+          setLocation({ city: data.features[0].text, coords: [lat, long] });
+        } catch (err) {
+          console.log(err);
+        }
+      }
+      getCityFromCoords(latitude, longitude);
+    }
+    function geoError() {
+      // add error message
+    }
+    if (!navigator.geolocation) {
+      // add not supported error message
+    } else {
+      // add loader
+      navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+    }
+  }
+  useEffect(() => {
+    getGeolocation();
+  }, []);
   useEffect(() => {
     getWeatherData();
   }, [location]);
